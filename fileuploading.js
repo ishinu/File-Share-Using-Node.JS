@@ -31,7 +31,7 @@ http.createServer((req,res)=>{
         // });
         // return res.end()
 
-        file.readFile('we1.html', function(err, data) {
+        file.readFile('index.html', function(err, data) {
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(data);
             return res.end();

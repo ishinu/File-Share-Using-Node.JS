@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>File Share</title>
+		<!-- 
+			* If somebody figures out how to make external CSS important, feel free to remove internal CSS and uncommend below line.
+			  Would be glad to have your solution! :) 
+
+			<link rel="stylesheet" href="styles.css" /> 
+		-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://kit.fontawesome.com/13eeb5616a.js" crossorigin="anonymous"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				color: #fff;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+				background: #000;
+			}
+
+			h1.header {
+				font-family: "Bigilla" !important;
+				font-size: 200px;
+				text-transform: uppercase;
+				font-weight: bolder;
+				width: 90%;
+			}
+
+			.header .letter {
+				display: inline-block;
+				line-height: 1em;
+			}
+
+			.titles {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			h1 {
+				font-weight: 500;
+				font-size: 240px;
+				font-family: "Barracuda" !important;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			ul.titles {
+				display: flex;
+			}
+
+			ul.blocks {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				width: 100%;
+				height: 100vh;
+				list-style: none;
+				justify-content: center;
+				align-items: center;
+			}
+
+			li.block {
+				height: 100vh;
+			}
+
+			.block-1 {
+				width: 0.2%;
+				margin: 0 10px;
+				background: #da0510;
+			}
+
+			.block-2 {
+				width: 1.4%;
+				margin: 0 200px 0 20px;
+				background: #2001fe;
+			}
+
+			.block-3 {
+				width: 0.8%;
+				margin: 0 40px;
+				background: #01fefe;
+			}
+
+			.block-4 {
+				width: 2%;
+				margin: 0 400px;
+				background: #00fe00;
+			}
+
+			.block-5 {
+				width: 0.8%;
+				margin: 0 20px;
+				background: #f4f315;
+			}
+
+			.block-6 {
+				width: 2.8%;
+				background: #fa04f9;
+			}
+
+		</style>
+	</head>
+	<body class="bg-gradient-to-r from-purple-500 to-pink-500">
+		<div class="container">
+			<div class="titles">
+				<div class="title title-1 text-[200px]"><h1>Make</h1></div>
+				<div class="title title-2 text-[200px]"><h1>A</h1></div>
+				<div class="title title-3 text-[200px]"><h1>Difference</h1></div>
+			</div>
+		</div>
+		<div class="content">
+			<nav
+			class="relative w-full flex flex-wrap 
+			items-center justify-between py-3 bg-gray-900 
+			bg-gradient-to-l from-purple-700 to-pink-700 shadow-lg 
+			navbar navbar-expand-lg navbar-light"
+			>
+				<div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+					<div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent1">
+						<i class="fa-solid fa-share-from-square"></i><a class="text-xl text-white pr-2 font-semibold" href="#"> File Share</a>
+					</div>
+				</div>
+			</nav>
+			<div class="grid place-items-center h-screen">
+				<div class="rounded-lg drop-shadow-2xl bg-white max-w-sm">
+					<div class="p-6">
+						<h5 class="text-gray-900 text-xl font-medium mb-2 text-center m-5 mb-5">Easy File Share  <i class="fa-solid fa-upload"></i></h5>
+						<p class="text-gray-700 text-base text-center mb-[35px]">
+							Click on Below button and share any file format ( Image/Video/Documents ... )
+						</p>
+						<i class="animate-bounce w-5 h-5 fa-solid fa-circle-down"></i>
+						<form action="fileupload" method="post" enctype="multipart/form-data">
+							<input type="file" name="filetoupload" class="text-black">
+							<button type="submit" class=" inline-block px-6 py-2.5 bg-lime-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-lime-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mt-3">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			TweenMax.staggerFrom(
+				".titles > div",
+				0.8,
+				{
+					x: "-60",
+					ease: Power3.easeInOut,
+					opacity: "0",
+				},
+				2
+			);
+
+			TweenMax.staggerTo(
+				".titles > div",
+				0.8,
+				{
+					x: "60",
+					ease: Power3.easeInOut,
+					delay: 1.2,
+					opacity: "0",
+				},
+				2
+			);
+			TweenMax.staggerFrom(
+				"li",
+				3,
+				{
+					x: "-1600",
+					delay: 4.2,
+					ease: Expo.easeInOut,
+				},
+				0.16
+			);
+
+			TweenMax.staggerTo(
+				"li",
+				2.6,
+				{
+					x: "1600",
+					delay: 6.8,
+					ease: Expo.easeInOut,
+				},
+				0.2
+			);
+			anime.timeline().add({
+				targets: ".content",
+				opacity: [0, 1],
+				easing: "easeOutExpo",
+				duration: 1000,
+				delay: (el, i) => 8400 + 40 * i,
+			});
+		</script>
+	</body>
+</html>
