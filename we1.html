@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/13eeb5616a.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-gradient-to-r from-purple-500 to-pink-500">
+        <nav
+        class="relative w-full flex flex-wrap 
+        items-center justify-between py-3 bg-gray-900 
+        bg-gradient-to-l from-purple-700 to-pink-700 shadow-lg 
+        navbar navbar-expand-lg navbar-light"
+        >
+            <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+                <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent1">
+                    <i class="fa-solid fa-share-from-square"></i><a class="text-xl text-white pr-2 font-semibold" href="#"> File Share</a>
+                </div>
+            </div>
+        </nav>
+        <div class="grid place-items-center h-screen">
+            <div class="rounded-lg drop-shadow-2xl bg-white max-w-sm">
+                <div class="p-6">
+                    <h5 class="text-gray-900 text-xl font-medium mb-2 text-center m-5 mb-5">Easy File Share  <i class="fa-solid fa-upload"></i></h5>
+                    <p class="text-gray-700 text-base text-center mb-[35px]">
+                        Click on Below button and share any file format ( Image/Video/Documents ... )
+                    </p>
+                    <i class="animate-bounce w-5 h-5 fa-solid fa-circle-down"></i>
+                    <!-- <form action="fileupload" method="post" enctype="multipart/form-data">
+                        <input class="inline-block px-6 py-2 border-2 border-green-500 text-green-500 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" type="file" name="filetoupload">
+                        <input type="submit">
+                        <button type="submit" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onclick="location.href='fileupload';">Submit</button>
+                    </form> -->
+                    <form action="fileupload" method="post" enctype="multipart/form-data">
+                        <input type="file" name="filetoupload">
+                        <button type="submit" class=" inline-block px-6 py-2.5 bg-lime-400 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-lime-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mt-3">Submit</button>
+                    </form>
+                </div>
+            </div>
+          </div>
+    </body>
+</html>
